@@ -1,68 +1,11 @@
-/* Common */
-
-aside, nav, footer, header, section, main {
-    display: block;
+* {
+    box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-ul, ul li {
-    list-style: none;
-}
-
-img {
-    vertical-align: top;
-}
-
-img, svg {
-    max-width: 100%;
-    height: auto;
-}
-
-address {
-    font-style: normal;
-}
-
-/* Form */
-
-input, textarea, button, select {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-}
-
-input::-ms-clear {
-    display: none;
-}
-
-button, input[type="submit"] {
-    display: inline-block;
-    box-shadow: none;
-    background-color: transparent;
-    background: none;
-    cursor: pointer;
-}
-
-input:focus, input:active,
-button:focus, button:active {
-    outline: none;
-}
-
-button::-moz-focus-inner {
+html {
+    margin: 0;
     padding: 0;
-    border: 0;
-}
-
-label {
-    cursor: pointer;
-}
-
-legend {
-    display: block;
+    height: 100%;
 }
 
 body {
@@ -90,136 +33,182 @@ body {
     src: url("font/SourceCodePro-Bold.ttf");
 }
 
-header {
-    background: #00468c;
+@font-face {
+    font-family: "SFProText-Light.ttf";
+    src: url("font/SFProText-Light.ttf");
 }
 
-.container {
-    width: 100%;
-    max-width: 180px;
-    text-decoration: none;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    font-family: "AluenderJames-Regular", sans-serif;
+@font-face {
+    font-family: "SFProText-Bold";
+    src: url("font/SFProText-Bold.ttf");
 }
+.my {
+    background: #ffffff;
+    height: 48px;
 
-.container {
-    .text_down {
-        font-weight: 600;
-        font-size: 18px;
-
+    .container {
+        display: flex;
+        flex-wrap: nowrap;
     }
-}
 
-.container {
     .text_up {
-        font-size: 24px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.34);
+        font-size: 14px;
+        color: #000000;
+        margin: 0 5px 0 82px;
+        max-width: 170px;
+        width: 100%;
+        font-family: "SFProText-Light.ttf", sans-serif;
     }
+
+    .text_down {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.34);
+        margin: 0 5px 0 25px;
+        font-size: 14px;
+        position: absolute;
+        max-width: 170px;
+        width: 100%;
+        text-decoration: none;
+        color: #000000;
+        text-align: center;
+        font-family: "SFProText-Light.ttf", sans-serif;
+
+    }
+
+
+    .dropdown {
+        display: inline-block;
+        position: relative;
+        margin-left: 7%;
+
+    }
+
+    .dropbtn {
+        padding: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #000000;
+        width: 200px;
+        cursor: pointer;
+        font-family: "SFProText-Light.ttf", sans-serif;
+        font-weight: lighter;
+    }
+
+    .dropdown-content {
+        padding: 0;
+        display: none;
+        margin-top: -5px;
+        position: absolute;
+        width: 200px;
+        background-color: rgb(255, 254, 254);
+        border-radius: 10px;
+        box-shadow: 5px 8px 16px 0 rgba(85, 70, 223, 0.23);
+    }
+
+    .dropdown-content a {
+        color: black;
+        font-size: 14px;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: "SFProText-Light.ttf", sans-serif;
+        font-weight: lighter;
+    }
+
+    .dropdown-content a:hover {
+        color: red;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn:after {
+        display: block; /*превращаем его в блочный элемент*/
+        content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+        height: 3px; /*задаём высоту линии*/
+        width: 0; /*задаём начальную ширину элемента (линии)*/
+        background-color: rgba(85, 70, 223, 0.23); /*цвет фона элемента*/
+        transition: width 0.4s ease;
+        margin-top: 4px;
+    }
+
+    .dropbtn:hover:after,
+    .dropbtn:focus:after {
+        width: 100%;
+    }
+
 }
 
-.containerr {
-    text-align: center;
-    margin-top: -105px;
-    padding: 25px;
-    margin-left: 12vw;
-    font-family: "AluenderJames-Regular", sans-serif;
-}
+.main_block {
+    .text_block {
+        font-family: "SFProText-Bold.ttf", sans-serif;
+        font-weight: bold;
+        font-size: 48px;
+        text-align: center;
+        margin: 35px 0 0 0;
+    }
 
-.dropbtn {
-    font-size: 18px;
-    color: black;
-    padding: 22px;
-    border-radius: 10px;
-    background: #a4ccca;
-    width: 200px;
-}
+    .dropdown_block {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        max-width: 287px;
+    }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    width: 200px;
-    background-color: #f1f1f1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
+    .dropbtn_block {
+        font-weight: lighter;
+        font-family: "SFProText-Light.ttf", sans-serif;
+        font-size: 18px;
+        color: #000000;
+        cursor: pointer;
+        padding: 15px;
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+    }
 
-.dropdown {
-    display: inline-block;
-    margin-right: 40px;
-}
+    .dropdown-content_block {
+        padding: 0;
+        display: none;
+        top: 100%;
+        font-size: 18px;
+        border-radius: 20px;
+        max-width: 287.63px;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0 rgba(85, 70, 223, 0.23);
+        position: absolute;
+    }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+    .dropdown-content_block a {
+        display: block;
+        text-decoration: none;
+        padding: 12px 16px;
+        color: black;
+        font-weight: lighter;
+        font-family: "SFProText-Light.ttf", sans-serif;
+    }
 
-.dropdown:hover .dropbtn {
-    background: rgba(225, 120, 123, 1)
-}
+    .dropdown_block:hover .dropdown-content_block {
+        display: block;
+    }
 
-.dropdown-content a:hover {
-    background: rgb(212, 212, 212)
-}
+    .dropdown-content_block a:hover {
+        color: red;
+    }
 
-.text_block {
-    font-size: 64px;
-    font-family: "SourceCodePro-Bold", sans-serif;
-    font-weight: bold;
-    padding: 60px;
-}
+    .dropbtn_block:after {
+        display: block; /*превращаем его в блочный элемент*/
+        content: ""; /*контента в данном блоке не будет поэтому в кавычках ничего не ставим*/
+        height: 3px; /*задаём высоту линии*/
+        width: 0; /*задаём начальную ширину элемента (линии)*/
+        background-color: rgba(85, 70, 223, 0.23); /*цвет фона элемента*/
+        transition: width 0.4s ease;
+        margin-top: 4px;
+    }
 
-.container_block {
-    padding: 60px;
-    font-family: "SourceCodePro-Bold", sans-serif;
-}
-
-.dropdown-content_block {
-    display: none;
-    position: absolute;
-    background-color: rgba(214, 164, 164, 0.1);
-    box-shadow: 0px 8px 16px 0px rgb(0, 70, 140, 0.4);
-}
-
-.dropdown-content_block a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    width: 400px;
-}
-
-.dropbtn_block {
-    border: 7px inset #00468c;
-    padding: 25px;
-    width: 400px;
-    border-radius: 10px;
-    font-size: 20px;
-    background: #a4ccca;
-    color: #000000;
-}
-
-.dropdown_block {
-    display: inline-block;
-}
-
-
-.dropdown-content_block a:hover {
-    background: rgb(123, 123, 123, 0.3);
-    border: 4px solid rgba(191, 188, 188, 0.3);
-}
-
-.dropdown_block:hover .dropbtn_block {
-    background: rgba(225, 120, 123, 1)
-}
-
-.dropdown_block:hover .dropdown-content_block {
-    display: block;
+    .dropbtn_block:hover:after,
+    .dropbtn_block:focus:after {
+        width: 100%;
+    }
 }
